@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="Tiago Brito">
+    <title>circuitMaps</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/circuitMaps.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">circuitMaps</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">inicial<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMeniLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">exemplos</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <h6 class="dropdown-header">4 variáveis</h6>
+                            <a class="dropdown-item" onclick="setExemplo(ex4_1,4)">mapa 4.1</a>
+                            <a class="dropdown-item" onclick="setExemplo(ex4_2,4)">mapa 4.2</a>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">5 variáveis</h6>
+                            <a class="dropdown-item" href="#">mapa 5.1</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="relatorio.pdf">relatório</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projeto_final.pdf">apresentação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="verTabelaVerdade" class="d-none bg-light sidebar">
+        <button onclick="ocultarTabelaVerdade()" class="btn btn-sm btn-secondary">ocultar tabela</button>
+        <button onclick="getTabelaVerdade()" class="btn btn-sm btn-secondary">usa tabela verdade</button>
+        <div id="tabelaVerdade">
+            
+        </div>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Mapa de Karnaugh</h1>
+        <hr class="my-4">
+        <label class="lead">Defina o número de variáveis:</label>
+        <select name="nVariaveis" id="nVariaveis" class="btn btn-sm btn-secondary">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        
+        <button onclick="criarMapa()" class="btn btn-sm btn-secondary">cria mapa</button>
+        <button onclick="setLimpar()" class="btn btn-sm btn-secondary">limpar</button>
+        <button onclick="setAleatorio()" class="btn btn-sm btn-secondary">valores aleatórios</button>
+        <button onclick="verTabelaVerdade()" class="btn btn-sm btn-secondary">usar tabela verdade</button>
+    </div>
+    
+    <div id="mapaKarnaugh">
+
+    </div>
+    <hr class="my-3">
+    <button id="resolver" onclick="resolucao()" class="btn btn-sm btn-secondary" hidden="hidden">resolver</button>
+    
+    <div id="solucao" hidden="hidden">
+        <hr class="my-3">
+        
+        <p class="display-4">Resolução</p>
+        <div id="resolucao">
+        
+        </div>
+        <hr class="my-3">
+        
+        <p class="display-4">Tabela de cobertura</p>
+        <div id="tabelaCobertura">
+        
+        </div>
+    </div>
+
+    
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/exemplos.js"></script>
+    <script src="js/padrao.js"></script>
+    <script src="js/cobertura.js"></script>
+    <script src="js/funcoes.js"></script>
+
+</body>
+
+</html>
